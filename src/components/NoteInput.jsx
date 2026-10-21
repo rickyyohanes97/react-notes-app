@@ -27,7 +27,7 @@ class NoteInput extends React.Component {
     this.setState({ body: value });
 
     if (value.length > 0 && value.length < 10) {
-      this.setState({ bodyError: 'Isi catatan minimal harus 10 karakter' });
+      this.setState({ bodyError: 'Fill the note body (minimum 10 characters)' });
     } else {
       this.setState({ bodyError: '' });
     }
@@ -38,7 +38,7 @@ class NoteInput extends React.Component {
     const { title, body } = this.state;
 
     if (body.length < 10) {
-      this.setState({ bodyError: 'Isi catatan minimal harus 10 karakter' });
+      this.setState({ bodyError: 'Fill the note body (minimum 10 characters)' });
       return;
     }
 
@@ -52,7 +52,7 @@ class NoteInput extends React.Component {
 
     return (
       <div className="note-input" data-testid="note-input">
-        <h2>Buat catatan</h2>
+        <h2>Create Note</h2>
 
         {bodyError && (
           <p className="note-input__feedback--error">{bodyError}</p>
@@ -66,12 +66,12 @@ class NoteInput extends React.Component {
             className="note-input__title__char-limit"
             data-testid="note-input-title-remaining"
           >
-            Sisa karakter: {remainingChars}
+            Remaining characters: {remainingChars}
           </p>
           <input
             className="note-input__title"
             type="text"
-            placeholder="Ini adalah judul ..."
+            placeholder="This is the title ..."
             value={title}
             onChange={this.onTitleChangeEventHandler}
             required
@@ -79,14 +79,14 @@ class NoteInput extends React.Component {
           />
           <textarea
             className="note-input__body"
-            placeholder="Tuliskan catatanmu di sini ..."
+            placeholder="Write your note here ..."
             value={body}
             onChange={this.onBodyChangeEventHandler}
             required
             data-testid="note-input-body-field"
           />
           <button type="submit" data-testid="note-input-submit-button">
-            Buat
+            Create
           </button>
         </form>
       </div>

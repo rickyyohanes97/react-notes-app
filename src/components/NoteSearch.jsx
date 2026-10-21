@@ -23,7 +23,7 @@ class NoteSearch extends React.Component {
         <input
           className="note-search__input"
           type="search"
-          placeholder="Cari catatan ..."
+          placeholder="Search notes ..."
           value={this.state.keyword}
           onChange={this.onKeywordChangeHandler}
           data-testid="note-search-input"

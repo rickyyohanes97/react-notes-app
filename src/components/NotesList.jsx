@@ -4,7 +4,7 @@ import NoteItem from './NoteItem';
 function formatGroupHeader(groupKey) {
   const [year, month] = groupKey.split('-');
   const date = new Date(Number(year), Number(month) - 1, 1);
-  return date.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' });
+  return date.toLocaleDateString('en-EN', { month: 'long', year: 'numeric' });
 }
 
 function groupNotesByMonth(notes) {
@@ -27,7 +27,7 @@ function NotesList({ notes, onDelete, onArchive, dataTestId = 'notes-list', sear
           className="notes-list__empty-message"
           data-testid={`${dataTestId}-empty`}
         >
-          Tidak ada catatan
+          No Notes Found
         </p>
       </div>
     );
@@ -46,7 +46,7 @@ function NotesList({ notes, onDelete, onArchive, dataTestId = 'notes-list', sear
           <div className="notes-group__header">
             <h3>{formatGroupHeader(groupKey)}</h3>
             <span data-testid={`${groupKey}-group-count`}>
-              {groupNotes.length} catatan
+              {groupNotes.length} notes
             </span>
           </div>
           {groupNotes.map((note) => (

@@ -81,7 +81,7 @@ class App extends React.Component {
             data-testid="active-notes-section"
           >
             <h2 id="active-notes-title">
-              Catatan Aktif ({activeNotes.length})
+              Active Notes ({activeNotes.length})
             </h2>
             <NotesList
               notes={activeNotes}
@@ -95,7 +95,7 @@ class App extends React.Component {
             aria-labelledby="archived-notes-title"
             data-testid="archived-notes-section"
           >
-            <h2 id="archived-notes-title">Arsip ({archivedNotes.length})</h2>
+            <h2 id="archived-notes-title">Archive ({archivedNotes.length})</h2>
             <NotesList
               notes={archivedNotes}
               onDelete={this.onDeleteHandler}

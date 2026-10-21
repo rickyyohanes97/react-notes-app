@@ -8,12 +8,12 @@ function NoteActionButton({ variant, onClick }) {
       testId: 'note-item-delete-button',
     },
     archive: {
-      label: 'Arsip',
+      label: 'Archive',
       className: 'note-item__archive-button',
       testId: 'note-item-archive-button',
     },
     unarchive: {
-      label: 'Aktifkan',
+      label: 'Activate',
       className: 'note-item__archive-button',
       testId: 'note-item-archive-button',
     },
